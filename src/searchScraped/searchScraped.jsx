@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React, { useState, useEffect } from 'react';
-import {BASE_URL} from '../constants/general';
+import { BASE_URL, AUTH_KEY } from '../constants/general';
 import SearchScrapedBody from './searchScrapedBody';
 import SearchScrapedHeader from './searchScrapedHeader';
 
@@ -13,7 +13,7 @@ const SearchScraped = () => {
 
     useEffect(() => {
         fetchData();
-    },[currentPage,searchType]) 
+    }, [currentPage, searchType]);
 
     const updateCurrentPageAndFetch = (currentPage = 0) => {
         updateCurrentPage(currentPage);
@@ -23,14 +23,15 @@ const SearchScraped = () => {
         updateSearchType(searchType);
     };
 
-
     const fetchData = () => {
-        const apiEndpoint = `${BASE_URL}/assets?type=${searchType}&pageNumber=${currentPage+1}`
+        const apiEndpoint = `${BASE_URL}/assets?type=${searchType}&pageNumber=${
+            currentPage + 1
+        }`;
         const requestOptions = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                authorization: 'Basic bW9tb3M6bW9tb3M=',
+                authorization: AUTH_KEY,
             },
         };
         fetch(apiEndpoint, requestOptions)

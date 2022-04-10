@@ -5,7 +5,7 @@ import UrlScrapingStatus from './urlScrapingStatus';
 const ScrapeUrls = () => {
     return (
         <div>
-            <AddUrlToScrape/>
+            <AddUrlToScrape />
             <UrlScrapingStatus />
         </div>
     );

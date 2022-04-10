@@ -1,25 +1,25 @@
-/* eslint-disable */ 
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import FormField from '../common/formFields/formField';
-import {BASE_URL} from '../constants/general';
+import { BASE_URL, AUTH_KEY } from '../constants/general';
 import '../styles/style.css';
 
 const UrlScrapingStatus = () => {
     const [scrapingUrlWithStatus, updateScrapingUrlWithStatus] = useState({});
-    const [currentPage, updateCurrentPage] = useState(0)
+    const [currentPage, updateCurrentPage] = useState(0);
 
     useEffect(() => {
         fetchScrapingUrlsStatus();
-    },[currentPage]);
+    }, [currentPage]);
 
     const fetchScrapingUrlsStatus = () => {
-        const apiEndpoint = `${BASE_URL}/scrape?pageNumber=${currentPage+1}`
+        const apiEndpoint = `${BASE_URL}/scrape?pageNumber=${currentPage + 1}`;
         const requestOptions = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                authorization: 'Basic bW9tb3M6bW9tb3M=',
+                authorization: AUTH_KEY,
             },
         };
         fetch(apiEndpoint, requestOptions)
@@ -29,37 +29,44 @@ const UrlScrapingStatus = () => {
             });
     };
 
-    const updatePagination = ({selected}) => {
+    const updatePagination = ({ selected }) => {
         updateCurrentPage(selected);
-    }
+    };
 
     return (
-            <div>
-                <FormField
-                    type="button"
-                    label="Refresh"
-                    onClick={fetchScrapingUrlsStatus}
-                    className="refreshBtn"
-                />
-                <table>
-                    <thead>
-                        <tr>
-                            <th>URL</th>
-                            <th>Status</th>
-                            <th>Retries</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {scrapingUrlWithStatus.data && scrapingUrlWithStatus.data.map((urlInfo, index) => (
+        <div>
+            <FormField
+                type="button"
+                label="Refresh"
+                onClick={fetchScrapingUrlsStatus}
+                className="refreshBtn"
+            />
+            <table>
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Status</th>
+                        <th>Retries</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {scrapingUrlWithStatus.data &&
+                        scrapingUrlWithStatus.data.map((urlInfo, index) => (
                             <tr key={index}>
                                 <td>{urlInfo.url}</td>
-                                <td>{urlInfo.isScraped ? 'Completed' : urlInfo.retries > 3 ? 'Error' : 'Pending'}</td>
+                                <td>
+                                    {urlInfo.isScraped
+                                        ? 'Completed'
+                                        : urlInfo.retries > 3
+                                        ? 'Error'
+                                        : 'Pending'}
+                                </td>
                                 <td>{urlInfo.retries}</td>
                             </tr>
                         ))}
-                    </tbody>
-                </table>
-                <ReactPaginate
+                </tbody>
+            </table>
+            <ReactPaginate
                 nextLabel="Next >"
                 onPageChange={updatePagination}
                 pageCount={10}
@@ -77,7 +84,7 @@ const UrlScrapingStatus = () => {
                 activeClassName="active"
                 renderOnZeroPageCount={null}
             />
-            </div>
-        )
+        </div>
+    );
 };
 export default UrlScrapingStatus;

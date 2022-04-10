@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import {BASE_URL} from '../constants/general';
+import { BASE_URL, AUTH_KEY } from '../constants/general';
 import FormField from '../common/formFields/formField';
-import '../styles/style.css'
+import '../styles/style.css';
 
 const AddUrlToScrape = () => {
     const [urlsToScrape, updateUrlToScrapeValue] = useState('');
@@ -17,13 +17,13 @@ const AddUrlToScrape = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                authorization: 'Basic bW9tb3M6bW9tb3M=',
+                authorization: AUTH_KEY,
             },
             body: JSON.stringify({
                 webUrls: urls,
             }),
         };
-        const apiEndPoint = BASE_URL+'/scrape'
+        const apiEndPoint = BASE_URL + '/scrape';
         fetch(apiEndPoint, requestOptions)
             .then((response) => response.json())
             .then((data) => {
@@ -33,15 +33,12 @@ const AddUrlToScrape = () => {
 
     const scrapeUrlsClickHandler = () => {
         addUrlsToScrape(urlsToScrape);
-        updateUrlToScrapeValue('');        
+        updateUrlToScrapeValue('');
     };
 
     return (
         <div className="addUrlsToScrape">
-            <FormField
-                value={urlsToScrape}
-                onChange={urlToScrapeChangeHandler}
-            />
+            <FormField value={urlsToScrape} onChange={urlToScrapeChangeHandler} />
 
             <FormField
                 type="button"

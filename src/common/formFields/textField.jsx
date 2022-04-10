@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const TextField = props => {
+const TextField = (props) => {
     return <input {...props} />;
 };
 

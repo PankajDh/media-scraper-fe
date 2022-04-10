@@ -27,7 +27,14 @@
     padding: 5px 20px;
     margin: 5px 15px;
     border-radius: 15px 15px;
-    background: linear-gradient(0deg,#633ce6,#5b3cdd,#523bd4,#4b3acb,#4339c2)!important;
+    background: linear-gradient(
+        0deg,
+        #633ce6,
+        #5b3cdd,
+        #523bd4,
+        #4b3acb,
+        #4339c2
+    ) !important;
     color: white;
     border: none;
     font-size: large;
@@ -73,13 +80,13 @@ a:hover {
     border: 2px solid grey;
     margin: 10px 0;
     max-width: 400px;
-    max-height: 200px
+    max-height: 200px;
 }
 
 .navbar {
     display: flex;
     background-color: black;
-    margin-bottom: 30px
+    margin-bottom: 30px;
 }
 
 .navbar li {
@@ -103,7 +110,14 @@ a:hover {
 }
 
 .navbar li a:hover {
-    background: linear-gradient(0deg,#633ce6,#5b3cdd,#523bd4,#4b3acb,#4339c2)!important;
+    background: linear-gradient(
+        0deg,
+        #633ce6,
+        #5b3cdd,
+        #523bd4,
+        #4b3acb,
+        #4339c2
+    ) !important;
 }
 
 .pagination {
@@ -136,7 +150,7 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
-.addUrlsToScrape input{
+.addUrlsToScrape input {
     width: 57%;
     padding: 12px;
     border-radius: 25px;
@@ -145,14 +159,21 @@ tr:nth-child(even) {
 
 .addUrlsToScrape {
     display: flex;
-    justify-content: center
+    justify-content: center;
 }
 
 .refreshBtn {
     padding: 10px 20px;
     float: right;
     margin: 10px;
-    background: linear-gradient(0deg,#633ce6,#5b3cdd,#523bd4,#4b3acb,#4339c2)!important;
+    background: linear-gradient(
+        0deg,
+        #633ce6,
+        #5b3cdd,
+        #523bd4,
+        #4b3acb,
+        #4339c2
+    ) !important;
     color: white;
-    border-radius: 15px
+    border-radius: 15px;
 }
