@@ -1,0 +1,158 @@
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+}
+
+.pagination a {
+    position: relative;
+    display: block;
+    color: black;
+    text-decoration: none;
+    background-color: lightgrey;
+    border: 1px solid #dee2e6;
+    transition: color 0.15s;
+    padding: 0.375rem 0.75rem;
+    border-radius: 11px;
+    border: none;
+    margin: 8px;
+}
+
+.disabled {
+    background: grey;
+    color: white;
+}
+
+.searchScrapeButton {
+    padding: 5px 20px;
+    margin: 5px 15px;
+    border-radius: 15px 15px;
+    background: linear-gradient(0deg,#633ce6,#5b3cdd,#523bd4,#4b3acb,#4339c2)!important;
+    color: white;
+    border: none;
+    font-size: large;
+}
+
+.searchScrapeHeader {
+    display: flex;
+    margin: 20px;
+}
+
+.searchScrapeText {
+    padding: 10px 20px;
+    margin: 5px 15px 5px 0;
+    font-size: large;
+    border-radius: 0 15px 15px 0;
+}
+
+.searchScrapeSelect {
+    padding: 10px 20px;
+    margin: 5px 0px 5px 0;
+    font-size: large;
+    border-radius: 15px 0 0 15px;
+}
+
+.searchScrapeSelect option {
+    padding: 10px 20px;
+}
+
+a:hover {
+    background: darkgray;
+    color: black;
+}
+
+.scrapedData {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+.scrapedItem {
+    border: 2px solid grey;
+    margin: 10px 0;
+    max-width: 400px;
+    max-height: 200px
+}
+
+.navbar {
+    display: flex;
+    background-color: black;
+    margin-bottom: 30px
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background: linear-gradient(0deg,#633ce6,#5b3cdd,#523bd4,#4b3acb,#4339c2)!important;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination li {
+    border-radius: 10px;
+}
+
+.pagination li {
+    border-radius: 10px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.addUrlsToScrape input{
+    width: 57%;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: large;
+}
+
+.addUrlsToScrape {
+    display: flex;
+    justify-content: center
+}
+
+.refreshBtn {
+    padding: 10px 20px;
+    float: right;
+    margin: 10px;
+    background: linear-gradient(0deg,#633ce6,#5b3cdd,#523bd4,#4b3acb,#4339c2)!important;
+    color: white;
+    border-radius: 15px
+}
