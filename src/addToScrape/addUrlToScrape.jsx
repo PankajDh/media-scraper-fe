@@ -11,6 +11,9 @@ const AddUrlToScrape = () => {
     };
 
     const addUrlsToScrape = (urlList) => {
+        if(!urlList || urlList.trim() === '') {
+            return;
+        }
         const urls = urlList.split(',');
 
         const requestOptions = {

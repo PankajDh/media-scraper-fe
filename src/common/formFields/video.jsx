@@ -4,22 +4,24 @@ import PropTypes from 'prop-types';
 const Video = (props) => {
     return (
         <video width="320" height="240" controls className={props.className}>
-            <source src={props.source} type={props.type} />
+            <source src={props.src} alt={props.alt}/>
             Your browser does not support the video tag.
         </video>
     );
 };
 
 Video.propTypes = {
-    source: PropTypes.string,
+    src: PropTypes.string,
     className: PropTypes.string,
     type: PropTypes.string,
+    alt: PropTypes.string
 };
 
 Video.defaultProps = {
-    soruce: '',
+    src: '',
     className: '',
     type: '',
+    alt:''
 };
 
 export default Video;

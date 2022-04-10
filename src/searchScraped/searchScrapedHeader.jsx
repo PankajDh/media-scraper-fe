@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import FormField from '../common/formFields/formField';
@@ -6,14 +6,14 @@ import { searchScrapedOption } from './constants/searchScraped.types';
 import '../styles/style.css';
 
 const SearchScrapedHeader = (props) => {
-    const [searchText, updateSearchText] = useState('');
+    // const [searchText, updateSearchText] = useState('');
 
     const searchClickHanlder = () => {
         props.fetchData();
     };
 
     const searchTextChangeHandler = (event) => {
-        updateSearchText(event.target.value);
+        props.updateSearchText(event.target.value);
     };
 
     const searchTypeChangeHandler = (event) => {
@@ -31,14 +31,14 @@ const SearchScrapedHeader = (props) => {
             />
             <FormField
                 type="text"
-                value={searchText}
+                value={props.searchText}
                 onChange={searchTextChangeHandler}
                 className="searchScrapeText"
                 contentClassName="searchScrapeSelect-content"
             />
             <FormField
                 type="button"
-                value={searchText}
+                value={props.searchText}
                 label="Search"
                 onClick={searchClickHanlder}
                 className="searchScrapeButton"
@@ -50,13 +50,17 @@ const SearchScrapedHeader = (props) => {
 SearchScrapedHeader.propTypes = {
     fetchData: PropTypes.func,
     updateSearchType: PropTypes.func,
+    updateSearchText: PropTypes.func,
     searchType: PropTypes.string,
+    searchText: PropTypes.string,
 };
 
 SearchScrapedHeader.defaultProps = {
     fetchData: () => {},
     updateSearchType: () => {},
+    updateSearchText: () => {},
     searchType: '',
+    searchText: '',
 };
 
 export default SearchScrapedHeader;

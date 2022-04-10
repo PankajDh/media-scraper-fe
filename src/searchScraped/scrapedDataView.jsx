@@ -17,6 +17,7 @@ const ScrapedDataView = (props) => {
                         className="scrapedItem"
                         type={item.type}
                         src={item.url}
+                        alt={item.alt}
                         key={index}
                     />
                 ))}

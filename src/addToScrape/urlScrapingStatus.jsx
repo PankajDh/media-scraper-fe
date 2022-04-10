@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 import FormField from '../common/formFields/formField';
 import { BASE_URL, AUTH_KEY } from '../constants/general';
+import debounce from '../common/debouncing';
 import '../styles/style.css';
 
 const UrlScrapingStatus = () => {
@@ -33,12 +34,14 @@ const UrlScrapingStatus = () => {
         updateCurrentPage(selected);
     };
 
+    const debouncedFetch = debounce(fetchScrapingUrlsStatus, 100);
+
     return (
         <div>
             <FormField
                 type="button"
                 label="Refresh"
-                onClick={fetchScrapingUrlsStatus}
+                onClick={debouncedFetch}
                 className="refreshBtn"
             />
             <table>

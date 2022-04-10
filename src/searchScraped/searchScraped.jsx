@@ -8,6 +8,7 @@ import SearchScrapedHeader from './searchScrapedHeader';
 const SearchScraped = () => {
     const [scrapedData, updateScrapedData] = useState({});
     const [searchType, updateSearchType] = useState('all');
+    const [searchText, updateSearchText] = useState('');
     const [searched, isSearched] = useState(false);
     const [currentPage, updateCurrentPage] = useState(0);
 
@@ -19,14 +20,14 @@ const SearchScraped = () => {
         updateCurrentPage(currentPage);
     };
 
-    const updateSearchTypeAndFetch = (searchType) => {
-        updateSearchType(searchType);
-    };
+    // const updateSearchTypeAndFetch = (searchType) => {
+    //     updateSearchType(searchType);
+    // };
 
     const fetchData = () => {
         const apiEndpoint = `${BASE_URL}/assets?type=${searchType}&pageNumber=${
             currentPage + 1
-        }`;
+        }&searchString=${searchText}`;
         const requestOptions = {
             method: 'GET',
             headers: {
@@ -48,6 +49,8 @@ const SearchScraped = () => {
                 searchType={searchType}
                 updateScrapedData={updateScrapedData}
                 updateSearchType={updateSearchType}
+                updateSearchText={updateSearchText}
+                searchText={searchText}
                 isSearched={isSearched}
                 fetchData={fetchData}
             />
