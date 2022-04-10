@@ -6,8 +6,8 @@ const Image = (props) => {
 };
 
 Image.propTypes = {
-    src: PropTypes.String,
-    className: PropTypes.String,
+    src: PropTypes.string,
+    className: PropTypes.string,
 };
 
 Image.defaultProps = {

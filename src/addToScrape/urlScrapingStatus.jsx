@@ -57,7 +57,7 @@ const UrlScrapingStatus = () => {
                                 <td>
                                     {urlInfo.isScraped
                                         ? 'Completed'
-                                        : urlInfo.retries > 3
+                                        : urlInfo.retries > 2
                                         ? 'Error'
                                         : 'Pending'}
                                 </td>
@@ -69,7 +69,7 @@ const UrlScrapingStatus = () => {
             <ReactPaginate
                 nextLabel="Next >"
                 onPageChange={updatePagination}
-                pageCount={10}
+                pageCount={scrapingUrlWithStatus.totalPages}
                 previousLabel="< Previous"
                 pageClassName="page-item"
                 pageLinkClassName="page-link"

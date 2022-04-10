@@ -15,8 +15,8 @@ const Dropdown = (props) => {
 
 Dropdown.propTypes = {
     options: PropTypes.array,
-    className: PropTypes.String,
-    label: PropTypes.String,
+    className: PropTypes.string,
+    label: PropTypes.string,
 };
 
 Dropdown.defaultProps = {

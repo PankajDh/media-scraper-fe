@@ -1,0 +1,1 @@
+export const EMPTY_IMAGE_URL = 'https://i.pinimg.com/originals/89/39/06/893906d9df7228cc36e1b3679a0d1dac.png';

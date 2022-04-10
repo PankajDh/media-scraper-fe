@@ -11,9 +11,9 @@ const Video = (props) => {
 };
 
 Video.propTypes = {
-    source: PropTypes.String,
-    className: PropTypes.String,
-    type: PropTypes.String,
+    source: PropTypes.string,
+    className: PropTypes.string,
+    type: PropTypes.string,
 };
 
 Video.defaultProps = {
